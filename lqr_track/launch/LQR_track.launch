@@ -1,0 +1,28 @@
+<launch>
+    <node pkg="lqr_track" type="LQR_node" name="LQR_node" output="screen">
+
+        <!--Basic vehicle information--><!--kesi is the Vehicle front wheel deflection angle-->
+        <param name="L" value="0.2"/><!--Vehicle wheelbase-->
+        <param name="V_DESIRED" value="0.5"/>
+        <param name="v_max" value="1.0"/>
+
+        <!--car initial state-->
+        <param name="initial_x" value="-0.127"/>
+        <param name="initial_y" value="-0.1474"/>
+        <param name="initial_yaw" value="0.0138"/>
+        <param name="initial_kesi" value="0.0"/>
+
+        <!--controller information-->
+        <param name="freq" value="20"/><!--control freq-->
+        <param name="slow_LEVE1_DISTANCE" value="4.0"/><!--First stage deceleration distance-->
+        <param name="slow_LEVE2_DISTANCE" value="1.0"/><!--Secondary deceleration distance-->
+        <param name="goal_tolerance_DISTANCE" value="0.1"/><!--Tracking stop distance-->
+        <param name="slow_LEVE1_V" value="0.5"/>
+        <param name="slow_LEVE2_V" value="0.15"/>
+        <param name="limit_v_and_kesi" value="true"/><!--If it is an akaman steering car, it must be limited. If it is an omni-directional car, it is optional-->
+        <rosparam param="Q_set">[1.0,1.0,1.0]</rosparam><!--State weight matrix Q = diag{Q1,Q2,Q3},please set Q<R-->
+        <rosparam param="R_set">[5.0,5.0]</rosparam><!--Control input weight matrix R = diag{R1,R2},please set Q<R-->
+    </node>
+    <!--rviz-->
+    <node name="lqr_track_rviz" pkg="rviz" type="rviz" required="true" args="-d $(find lqr_track)/rviz/track.rviz"/>
+</launch>

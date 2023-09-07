@@ -1,0 +1,3 @@
+    <launch>
+    <node pkg="lqr_track" type="lqr_odom_listen" name="lqr_odom_listen" output="screen"/>
+    </launch>

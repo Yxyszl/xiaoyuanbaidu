@@ -1,0 +1,16 @@
+<launch>
+    <node pkg="lqr_track" type="path_planning" name="path_planning" output="screen">
+        <param name="x_start" value="0.0"/>
+        <param name="y_start" value="-0.25"/>
+        <param name="trajectory_type" value="line"/><!--choose the trajectory type default:line,wave1,wave2-->
+        <!--If you need to add a custom path, please see trajectory.h-->
+        <param name="limit_x" value="4.0"/>
+        <param name="limit_y" value="0.0"/>
+    </node>
+
+    <!--rviz-->
+    <!-- <node name="path_rviz" pkg="rviz" type="rviz" required="true"
+        args="-d $(find lqr_track)/rviz/path_show.rviz">
+    </node> -->
+
+</launch>
