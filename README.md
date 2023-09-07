@@ -8,10 +8,10 @@
    **订阅雷达点云数据实现点云pcd地图构建**  
    pcd点云数据保存在sc_lego_loam\src\SC-LeGO-LOAM\SC-LeGO-LOAM\LeGO-LOAM\map  
      
-3. 运行imu_gps_localization\src\imu_gps_localization 
-   \imu_gps_localization-master\ros_wrapper\launch\imu_gps_localization.launch
-   **订阅车辆经纬度 IMU_data数据 实现iMU与gps 实现融合定位**
-     
-5. 遥控车辆底盘 绕固定场景
+3. 运行imu_gps_localization\src\imu_gps_localization  
+   \imu_gps_localization-master\ros_wrapper\launch\imu_gps_localization.launch  
+   **订阅车辆经纬度 IMU_data数据 实现iMU与gps 实时融合定位**  
+   车辆在定位的经纬度数据实时记录在
+4. 遥控车辆底盘 绕固定场景
+5. 
 6. 
-7. 
