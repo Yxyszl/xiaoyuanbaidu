@@ -29,6 +29,8 @@
 1.实现三维pcd地图转换为二维栅格地图 运行pcd2pgm_package/pcd2pgm/launch/中的run.launch 并且通过rosrun map_server map_saver 实现栅格地图的保存  
   
 2. 运行底盘驱动功能包 **驱动包具体操作流程在文件夹 yhs_说明**
+   同时运行功能包yhs\src\yhs_can_control\cmd_vel_change 将马上要订阅的move_base速度信息 转换为 无人车所需的信息  
      
-3.通过mapserver 加载move_base所需的地图 配合使用定位 运行navigation_ws\src\navigation-melodic-devel\move_base\launch\navigation.launch 
+3.通过mapserver 加载move_base所需的地图 配合使用定位 运行navigation_ws\src\navigation-melodic-devel\move_base\launch\navigation.launch  
+通过rviz确定导航目标点  实现定点导航
   
