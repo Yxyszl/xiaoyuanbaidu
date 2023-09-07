@@ -32,7 +32,7 @@
    同时运行功能包yhs\src\yhs_can_control\cmd_vel_change 将马上要订阅的move_base速度信息 转换为 无人车所需的信息  
      
 3.通过mapserver 加载move_base所需的地图 配合使用定位 运行navigation_ws\src\navigation-melodic-devel\move_base\launch\navigation.launch  
-通过rviz确定导航目标点  实现定点导航
+通过rviz确定导航目标点也可通过自定义导航点功能包  实现定点导航
   
  ##  （4） 问题与展望  
  1.系统只是初步搭建了导航的框架 使用move_base的全局导航 **Astar算法**  使用的TEB局部路径规划算法由于参数与技术原因使得无人车无法实时避障  
