@@ -26,6 +26,5 @@
 3.运行\lqr_track\launch\odom_listen_from_tf.launch 实现话题odom发布 为后续move_base导航框架 提供定位  
 
  ##  （3） 导航  
- 1.实现pcd转换为栅格地图 [三维pcd地图转二维栅格地图]([http://blog.csdn.net/guodongxiaren](https://blog.csdn.net/valanria_steel/article/details/102903865?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169409080116800182757897%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169409080116800182757897&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-15-102903865-null-null.142^v93^chatsearchT3_1&utm_term=%E7%A6%BB%E7%BA%BF%E5%B0%86pcd%E5%9C%B0%E5%9B%BE%E8%BD%AC%E4%B8%BA%E6%A0%85%E6%A0%BC%E5%9C%B0%E5%9B%BE%20%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85&spm=1018.2226.3001.4187)https://blog.csdn.net/valanria_steel/article/details/102903865?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169409080116800182757897%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169409080116800182757897&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-15-102903865-null-null.142^v93^chatsearchT3_1&utm_term=%E7%A6%BB%E7%BA%BF%E5%B0%86pcd%E5%9C%B0%E5%9B%BE%E8%BD%AC%E4%B8%BA%E6%A0%85%E6%A0%BC%E5%9C%B0%E5%9B%BE%20%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85&spm=1018.2226.3001.4187 "链接")
-
+ 1.实现三维pcd地图转换为二维栅格地图
   
