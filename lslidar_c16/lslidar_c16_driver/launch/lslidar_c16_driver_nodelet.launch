@@ -1,0 +1,20 @@
+<launch>
+
+    <arg name="device_ip" value="192.168.1.200"/>
+  <arg name="firing_port" value="2368"/>
+  <arg name="topic_packet" default="/apollo/sensor/velodyne16/LslidarPacket"/>
+  <arg name="topic_pointcloud" default="/apollo/sensor/velodyne16/PointCloud2"/>
+    <!--arg name="manager_name" default="nodelet_manager"/-->
+  <!-- start nodelet manager and load driver nodelet -->
+  <node pkg="nodelet" type="nodelet" name="lslidar_c16_nodelet_manager" args="manager" output="screen" respawn="true"/>
+
+  <node pkg="nodelet" type="nodelet"
+    name="lslidar_c16_driver_nodelet"
+    args="load lslidar_c16_driver/DriverNodelet lslidar_c16_nodelet_manager" respawn="true">
+    <param name="frame_id" value="laser_link"/>
+
+
+
+  </node>
+
+</launch>

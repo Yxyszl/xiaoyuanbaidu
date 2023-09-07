@@ -1,0 +1,9 @@
+<!--yhs-->
+<launch>
+
+    <node pkg="yhs_can_control" type="yhs_can_control_node" name="yhs_can_control_node" output="screen">
+
+    </node>
+
+</launch>
+

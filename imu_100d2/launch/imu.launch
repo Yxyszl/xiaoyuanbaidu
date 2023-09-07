@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="imu_100d2"
+        name="imu"
+        type="imu_100d2"
+        output="screen">
+    <param name="port" value="/dev/ttyUSB0"/>
+    
+
+    <param name="model" value="imu_100d2"/>
+    <param name="baud" value="115200"/>
+    <remap from="/imu_data" to="/imu/data" />
+  </node>
+
+</launch>

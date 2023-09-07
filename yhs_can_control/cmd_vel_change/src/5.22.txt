@@ -1,0 +1,6 @@
+{
+  // 打印订阅到的cmd_vel数据
+  ROS_INFO("Received cmd_vel:\nlinear: x=%.2f, y=%.2f, z=%.2f\nangular: x=%.2f, y=%.2f, z=%.2f",
+           msg->linear.x, msg->linear.y, msg->linear.z,
+           msg->angular.x, msg->angular.y, msg->angular.z);
+}

@@ -1,0 +1,59 @@
+<launch>
+    <arg name="child_frame_id" default="lslidar"/>
+    <arg name="topic_packet" default="/apollo/sensor/lslidar_c16/LslidarPacket"/>
+    <arg name="topic_pointcloud" default="/apollo/sensor/lslidar_c16/PointCloud2"/>
+    <arg name="device_ip" default="192.168.1.200" />
+    <arg name="msop_port" default="2368" />
+    <arg name="difop_port" default="2369" />
+    <arg name="return_mode" default="1" />
+    <arg name="time_synchronization" default="true" />
+    <arg name="manager_name" default="nodelet_manager"/>
+
+
+
+
+  <!--include file="$(find lslidar_c16_driver)/launch/lslidar_c16_driver_nodelet.launch"/-->
+    <!-- nodelet manager -->
+
+     <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" output="screen" />
+
+      <node pkg="nodelet" type="nodelet"
+        name="lslidar_c16_driver_nodelet"
+        args="load lslidar_c16_driver/DriverNodelet nodelet_manager" respawn="true">
+        <param name="device_ip" value="$(arg device_ip)" />
+        <param name="msop_port" value="$(arg msop_port)" />
+        <param name="difop_port" value="$(arg difop_port)"/>
+        <param name="frame_id" value="laser_link"/>
+        <param name="add_multicast" value="false"/>
+        <param name="group_ip" value="224.1.1.2"/>
+        <param name="rpm" value="600"/>
+        <param name="return_mode" value="$(arg return_mode)"/>
+        <param name="time_synchronization" value="$(arg time_synchronization)"/>
+      </node>
+
+
+  <node pkg="nodelet" type="nodelet"
+    name="LslidarC16DecoderNodelet"
+    args="load lslidar_c16_decoder/LslidarC16DecoderNodelet
+    $(arg manager_name)"
+    output="screen" respawn="true">
+    <param name="scan_frame_id" value="laser_link"/>
+    <param name="min_range" value="0.15"/>
+    <param name="max_range" value="150.0"/>
+    <param name="config_vert" value="true"/>
+    <param name="print_vert" value="false"/>
+    <param name="return_mode" value="$(arg return_mode)"/>
+    <param name="degree_mode" value="2"/>
+    <param name="config_vert_file" value="false"/>
+    <param name="distance_unit" value="0.25"/>
+    <param name="time_synchronization" value="$(arg time_synchronization)"/>
+    <param name="scan_start_angle" value="0.0"/>
+    <param name="scan_end_angle" value="36000.0"/>
+    <param name="scan_num" value="8"/>
+    <param name="publish_scan" value="true"/>
+
+  </node>
+  
+ <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find lslidar_c16_decoder)/launch/lslidar_c16.rviz" output="screen"/>
+-->
+</launch>
