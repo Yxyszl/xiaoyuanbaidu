@@ -9,7 +9,7 @@
 2. 遥控车辆底盘绕固定场景运动同时使用rosbag录制所有传感器数据  
      
 3. 播放录制的的数据包同时运行 sc_lego_loam\src\SC-LeGO-LOAM\SC-LeGO-LOAM\LeGO-LOAM\launch\run.launch  
-   **订阅雷达点云数据实现点云pcd地图构建**  
+**订阅雷达点云数据实现点云pcd地图构建**  
    pcd点云数据保存在sc_lego_loam\src\SC-LeGO-LOAM\SC-LeGO-LOAM\LeGO-LOAM\map  
      
 4. 运行imu_gps_localization\src\imu_gps_localization  
