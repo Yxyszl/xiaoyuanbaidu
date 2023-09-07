@@ -26,5 +26,5 @@
 3.运行\lqr_track\launch\odom_listen_from_tf.launch 实现话题odom发布 为后续move_base导航框架 提供定位  
 
  ##  （3） 导航  
- 1.实现三维pcd地图转换为二维栅格地图
+ 1.实现三维pcd地图转换为二维栅格地图 运行pcd2pgm_package/pcd2pgm/launch/中的run.launch
   
