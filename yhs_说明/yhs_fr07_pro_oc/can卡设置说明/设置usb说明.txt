@@ -1,0 +1,15 @@
+1.  查看/etc/目录下有没有 rc.local文件，如果没有 sudo cp rc.local /etc
+    如果存在rc.local文件，则在 rc.local的 exit 0上面加入 
+
+    sleep 2
+    sudo ip link set can0 type can bitrate 500000
+    sudo ip link set can0 up
+ 
+    后保存
+
+
+2.  打开opencan.sh文件，将两处123456修改为你的电脑root密码，保存，然后执行 sudo cp opencan.sh /opt/mnt/
+
+3.  执行sudo cp opencan.rules /etc/udev/rules.d
+
+4.  重新拔插usb，看到RX和TX灯亮了就表示设置成功

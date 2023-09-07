@@ -1,0 +1,52 @@
+ROS驱动包使用前提条件：（1）ubuntu16/ubuntu18系统    （2）ubuntu装好ros1
+
+1、检查CAN是否正常
+     1.1、将CAN卡接到电脑的USB口
+
+     1.2、打开终端，输入命令  lsusb  在输出信息中看到以下内容，则表示CAN能够正常使用，如果看不到将CAN卡的拨码开关设置为  2下1上  下是ON。
+             Device 030: ID 1d50:606f OpenMoko, Inc.
+
+2.  开机设置
+   
+    2.1、 查看/etc/目录下有没有 rc.local文件，如果没有 sudo cp rc.local /etc
+             如果存在rc.local文件，则在 rc.local的 exit 0上面加入 以下内容后保存。
+
+            sleep 2
+            sudo ip link set can0 type can bitrate 500000
+            sudo ip link set can0 up
+ 
+    2.2、开机或者重启之前，CAN卡已经接到工控机的USB口。
+
+    2.3、看到RX和TX灯亮了就表示设置成功。
+
+3、即时设置
+
+    3.1、重新拔插CAN卡后，需要执行以下命令使能CAN卡
+   
+           sudo ip link set can0 type can bitrate 500000
+           sudo ip link set can0 up
+
+    3.2、看到RX和TX灯亮了就表示设置成功。
+
+
+4、通讯测试
+
+     4.1、将底盘的CAN线与CAN卡连接好，底盘红色线接CAN卡CANH，底盘黑色线接CAN卡CANL。
+
+     4.2、正确连接好后，可以看到CAN卡的蓝色接收灯闪烁，如果蓝色灯不闪烁，检查底盘是否上电，CAN线是否正确连接，注意（直接将底盘的CAN线接到CAN卡，确保通讯正常后才能接延长线）。
+	
+     4.3、安装好can-utils（sudo apt-get install can-utils ）后，打开终端，输入 candump can0 就可以看到CAN卡接收到底盘的数据了。
+
+
+5、ROS驱动包的具体使用看另外的说明文档。
+
+
+
+
+
+
+
+
+
+
+
