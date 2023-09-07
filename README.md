@@ -20,13 +20,14 @@
 1.运行雷达驱动功能包 gps驱动包 获得点云数据 车辆经纬度  
   **驱动包具体操作流程在文件夹 yhs_说明**  
     
-2.通过map_server加载pcd地图 ，结合1.4中的经纬度运行功能包 initialpose 得知车辆出发点的坐标 实现定位初始配准 再运行ndt_localizer\launch\ndt_localizer.launch 实现点云配准定位  
+2.加载pcd地图 ，结合1.4中的经纬度运行功能包 initialpose 得知车辆出发点的坐标 实现定位初始配准 再运行ndt_localizer\launch\ndt_localizer.launch 实现点云配准定位  
 **出发点配准好需要关闭功能包 initialpose**  
   
 3.运行\lqr_track\launch\odom_listen_from_tf.launch 实现话题odom发布 为后续move_base导航框架 提供定位  
 
  ##  （3） 导航  
- 1.实现三维pcd地图转换为二维栅格地图 运行pcd2pgm_package/pcd2pgm/launch/中的run.launch  
+ 1.实现三维pcd地图转换为二维栅格地图 运行pcd2pgm_package/pcd2pgm/launch/中的run.launch 并且通过rosrun map_server map_saver 实现栅格地图的保存  
   
  2.
+ 2.通过mapserver 加载move_base所需的地图 配合使用定位 运行navigation_ws\src\navigation-melodic-devel\move_base\launch\navigation.launch 
   
