@@ -12,5 +12,6 @@
      
 4. 运行imu_gps_localization\src\imu_gps_localization  
    \imu_gps_localization-master\ros_wrapper\launch\imu_gps_localization.launch  
-   **订阅车辆经纬度 IMU_data数据 实现iMU与gps 融合定位**  
-   车辆在定位的经纬度数据实时记录在
+   车辆在定位的经纬度数据最后记录在\imu_gps_localization\src\imu_gps_localization\imu_gps_localization-master\gps.csv
+  
+5.
