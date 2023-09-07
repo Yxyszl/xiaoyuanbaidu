@@ -23,5 +23,10 @@
 2.加载pcd地图 ，结合1.4中的经纬度运行功能包 initialpose 得知车辆出发点的坐标 实现定位初始配准 再运行ndt_localizer\launch\ndt_localizer.launch 实现点云配准定位  
 **出发点配准好需要关闭功能包 initialpose**  
   
-3.运行\lqr_track\launch\odom_listen_from_tf.launch 实现话题odom发布 为后续move_base 导航框架
+3.运行\lqr_track\launch\odom_listen_from_tf.launch 实现话题odom发布 为后续move_base导航框架 提供定位  
+
+ ##  （3） 导航  
+ 1.
+  
+
   
