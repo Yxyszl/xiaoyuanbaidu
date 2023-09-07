@@ -17,7 +17,6 @@
    车辆在定位的经纬度数据最后记录在\imu_gps_localization\src\imu_gps_localization\imu_gps_localization-master\gps.csv
   
 ##  （2） 定位  
-  
 1.运行雷达驱动功能包 gps驱动包 获得点云数据 车辆经纬度  
   **驱动包具体操作流程在文件夹 yhs_说明**  
     
