@@ -16,4 +16,12 @@
    \imu_gps_localization-master\ros_wrapper\launch\imu_gps_localization.launch  
    车辆在定位的经纬度数据最后记录在\imu_gps_localization\src\imu_gps_localization\imu_gps_localization-master\gps.csv
   
-##  （2） 定位
+##  （2） 定位  
+  
+1.运行雷达驱动功能包 gps驱动包 获得点云数据 车辆经纬度  
+  **驱动包具体操作流程在文件夹 yhs_说明**  
+    
+2.加载pcd地图 ，结合1.4中的初始经纬度运行功能包 initialpose  实现定位初始配准 再运行ndt_localizer\launch\ndt_localizer.launch 实现点云配准定位  
+  
+3.运行 
+  
