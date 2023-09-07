@@ -34,3 +34,5 @@
 3.通过mapserver 加载move_base所需的地图 配合使用定位 运行navigation_ws\src\navigation-melodic-devel\move_base\launch\navigation.launch  
 通过rviz确定导航目标点  实现定点导航
   
+ ##  （4） 问题与展望  
+ 1.系统只是初步搭建了导航的框架 使用move_base的全局导航 **Astar算法**
